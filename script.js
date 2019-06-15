@@ -32,10 +32,8 @@ var eventType = prompt("What type of event are you going to?");
 /*var eventType="";*/
 
 var tempClothing = null; // this has no value yet
-var eventClothing = ["something comfy","a polo","a suit"]; // this has no value yet
-var firstItem = eventClothing[0];
-var secondItem = eventClothing[1];
-var thirdItem = eventClothing[2];
+var eventClothing = null; // this has no value yet
+
 
 /*eventClothing.forEach(function(item,index,array) {
     console.log();
@@ -43,16 +41,17 @@ var thirdItem = eventClothing[2];
 
 if (tempFahr < 54) {
     tempClothing = "a coat";
-}else if (tempFahr <= 54) {
+}else if (tempFahr >= 54 && tempFahr<70) {
 	tempClothing = "a jacket";
 }else if (tempFahr > 70) {
-	tempClothing = "no jacket";
-}else if (eventType == casual) {
-    eventClothing = firstItem;
-}else if (eventType == semiformal) {
-	eventClothing = secondItem;
-}else if (eventType == formal) {
-	eventClothing = thirdItem;	
+    tempClothing = "no jacket";
+} 
+if (eventType == "casual") {
+    eventClothing = "something comfy";
+}else if (eventType == "semiformal") {
+	eventClothing = "a polo";
+}else if (eventType == "formal") {
+	eventClothing = "a suit";	
 }
 
 /*result is equal to tempFahr + eventType + tempClothing + eventClothing*/
@@ -61,6 +60,5 @@ if (tempFahr < 54) {
 /*var result = tempClothing.concat(eventClothing[0]);
 console.log(result);*/
 
-var result = ("Since it is " + tempFahr + " degrees, and you are going to a " + eventType + " event, you should wear " + tempClothing + " and " + firstItem);
+var result = ("Since it is " + tempFahr + " degrees, and you are going to a " + eventType + " event, you should wear " + tempClothing + " and " + eventClothing);
 console.log(result);
-
